@@ -3,3 +3,6 @@
   background-image: url(../../../assets/immagini/paginabg.jpg);
   background-repeat: repeat;
 }
+.container-fluid p {
+  color: black;
+}
