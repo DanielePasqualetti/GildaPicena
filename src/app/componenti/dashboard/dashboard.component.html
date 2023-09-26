@@ -1,0 +1,44 @@
+<!-- <mat-drawer-container class="example-container container-fluid px-0">
+  <mat-drawer class="col-2" mode="side" opened>
+    <mat-list role="list">
+      <mat-list-item role="listitem" routerLink="pagina1"
+        >pagina1</mat-list-item
+      >
+      <mat-list-item role="listitem" routerLink="about">About</mat-list-item>
+      <mat-list-item role="listitem" routerLink="contact"
+        >Contact</mat-list-item
+      >
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <p>
+      <mat-toolbar>
+        <span class="example-spacer"></span>
+        <button
+          mat-icon-button
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon"
+        >
+          <mat-icon>logout</mat-icon>
+        </button>
+      </mat-toolbar>
+    </p>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+<div class="container-fluid bg-danger">
+  <mat-list class="d-flex flex-row" role="list">
+    <div>
+      <mat-list-item role="listitem" routerLink="home">Home</mat-list-item>
+    </div>
+    <div>
+      <mat-list-item role="listitem" routerLink="about">About</mat-list-item>
+    </div>
+    <div>
+      <mat-list-item role="listitem" routerLink="contact"
+        >Contact</mat-list-item
+      >
+    </div>
+  </mat-list>
+</div>
+<router-outlet></router-outlet>
