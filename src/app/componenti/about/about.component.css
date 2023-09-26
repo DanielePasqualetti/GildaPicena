@@ -1,0 +1,11 @@
+.container-fluid {
+  background-image: url(../../../assets/immagini/paginabg.jpg);
+  background-repeat: repeat;
+}
+h2,
+h3 {
+  color: rgb(136, 66, 61);
+}
+#card {
+  background-color: rgb(116, 135, 195);
+}
