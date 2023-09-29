@@ -32,5 +32,36 @@ export class SociService {
     }
   }
 
-  aggiungiSocio() {}
+  aggiungiSocio(nuovoSocio: ISocio) {
+    this.headers = this.headers.set(
+      'Authorization',
+      'Bearer ' + this.getToken()
+    );
+
+    return this.Http.post<any>(`${this.apiUrl}/soci/new`, nuovoSocio, {
+      headers: this.headers,
+    });
+  }
+
+  eliminaSocio(id: number) {
+    this.headers = this.headers.set(
+      'Authorization',
+      'Bearer ' + this.getToken()
+    );
+
+    return this.Http.delete<any>(`${this.apiUrl}/soci/${id}`, {
+      headers: this.headers,
+    });
+  }
+
+  salvaModifiche(id: number, socioModificato: ISocio) {
+    this.headers = this.headers.set(
+      'Authorization',
+      'Bearer ' + this.getToken()
+    );
+
+    return this.Http.put<any>(`${this.apiUrl}/soci/${id}`, socioModificato, {
+      headers: this.headers,
+    });
+  }
 }
