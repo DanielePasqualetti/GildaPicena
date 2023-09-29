@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -13,9 +11,34 @@ import { MatInputModule } from '@angular/material/input';
 export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
-    const email = form.value.email;
-    const password = form.value.password;
-    //chiamare authservice
+  @ViewChild('f') form!: NgForm;
+
+  error: undefined | string;
+
+  constructor(private svc: AuthService, private router: Router) {}
+
+  onSubmit() {
+    if (
+      this.form.value.name.trim() !== '' &&
+      this.form.value.lastname.trim() !== '' &&
+      this.form.value.username.trim() !== '' &&
+      this.form.value.email.trim() !== '' &&
+      this.form.value.password.trim() !== ''
+    ) {
+      this.svc.signup(this.form.value).subscribe(
+        (resp) => {
+          console.log(resp);
+          this.error = undefined;
+          this.router.navigate(['/login']);
+        },
+        (err) => {
+          console.log(err.error.message);
+          this.error = err.error.message;
+          this.router.navigate(['/login']);
+        }
+      );
+    } else {
+      this.error = 'Devi compilare tutti i campi.';
+    }
   }
 }

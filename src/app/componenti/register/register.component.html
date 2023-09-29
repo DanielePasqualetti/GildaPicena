@@ -1,9 +1,10 @@
 <div class="container d-flex flex-column align-items-center">
   <h1 class="text-center fs-1 my-5">Registrati</h1>
   <form
+    #f="ngForm"
     class="w-25 d-flex flex-column"
     #registerForm="ngForm"
-    (ngSubmit)="onSubmit(registerForm)"
+    (ngSubmit)="onSubmit()"
   >
     <mat-form-field>
       <mat-label>Nome</mat-label>
@@ -34,4 +35,7 @@
       Registrati
     </button>
   </form>
+  <div class="alert alert-danger my-3" role="alert" *ngIf="error">
+    {{ error }}
+  </div>
 </div>

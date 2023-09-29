@@ -1,0 +1,21 @@
+<div class="mt-5 container w-100">
+  <div>
+    <button mat-raised-button (click)="aggiungiSocio()">Aggiungi Socio</button>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Data Iscrizione</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let socio of soci">
+        <td>{{ socio?.name }}</td>
+        <td>{{ socio?.lastname }}</td>
+        <td>{{ socio?.iscrizione }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

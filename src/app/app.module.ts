@@ -17,6 +17,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
 
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 import { LoginComponent } from './componenti/login/login.component';
@@ -47,6 +50,9 @@ import { RegisterComponent } from './componenti/register/register.component';
     MatSidenavModule,
     MatToolbarModule,
     MatSelectModule,
+    HttpClientModule,
+    MatTableModule,
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

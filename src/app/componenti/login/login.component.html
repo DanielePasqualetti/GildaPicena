@@ -1,13 +1,14 @@
 <div class="container d-flex flex-column align-items-center">
   <h1 class="text-center fs-1 my-5">Login</h1>
   <form
+    #f="ngForm"
     class="w-25 d-flex flex-column"
     #loginForm="ngForm"
-    (ngSubmit)="onSubmit(loginForm)"
+    (ngSubmit)="onSubmit()"
   >
     <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput type="email" name="email" required ngModel />
+      <mat-label>Username</mat-label>
+      <input matInput type="username" name="username" required ngModel />
     </mat-form-field>
     <mat-form-field>
       <mat-label>password</mat-label>
@@ -17,4 +18,7 @@
       Login
     </button>
   </form>
+  <div class="alert alert-danger my-3" role="alert" *ngIf="error">
+    {{ error }}
+  </div>
 </div>
